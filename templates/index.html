@@ -1,36 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Calculator</title>
-</head>
-
-<body>
-    <h1>Index Page - API</h1>
-</body>
-
-<script>
-    const data = {
-        text: 'Hello who created you?'
-    };
-
-    fetch('http://127.0.0.1:5000/api', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
-</script>
-
-</html>
+{% extends 'base.html' %}
+{% block main %}
+    <div>
+        Json API
+    </div>
+    <div class="api-call">
+        <p>url: */api</p>
+        <p>json:  { "text": "how are you?" }</p>
+        <p>method: POST</p>
+        <p>response: { "text": "I am fine" }</p>
+    </div>
+{% endblock  %}

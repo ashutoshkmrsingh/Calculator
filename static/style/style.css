@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --background-color: #ffffff;
+    --header: #353535;
+}
+
+* {
+    background-color: var(--background-color);
+    font-family: 'Sulphur Point', sans-serif;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    background-color: var(--header);
+    width: 100%;
+    height: max-content;
+}
+
+.title {
+    font-family: 'Sulphur Point', sans-serif;
+    display: inline-block;
+    font-size: 5vh;
+    background-color: transparent;
+    color: var(--background-color);
+    font-weight: 500;
+    margin-left: 10%;
+}
+
+main {
+    text-align: center;
+    margin-top: 5%;
+    font-size: 3vh;
+    font-weight: 1000;
+}
+
+.footer {
+    width: 100%;
+    height: max-content;
+}
+
+.info {
+    text-align: center;
+    font-size: 4vh;
+    font-weight: 2000;
+}
+
+.api-call {
+    background-color: #d4e66f;
+    font-size: medium;
+    font-size: 2vh;
+    font-weight: 500;
+    width: max-content;
+    display: inline-block;
+}
+
+.api-call p {
+    font-family: 'Roboto', sans-serif;
+    background-color: transparent;
+    justify-self: left;
+}
