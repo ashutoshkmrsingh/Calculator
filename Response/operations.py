@@ -1,45 +1,42 @@
 from Response.calculation import Calculate
 from Response.interaction import Interaction
 
+
 class Operations:
-    calculation_operation = {
-        'add': 'add',
-        'addition': 'add',
-        'sum': 'add',
-        '+': 'add',
-        'plus': 'add',
-        'difference': 'subtract',
-        'differences': 'subtract',
-        'subtract': 'subtract',
-        'minus': 'subtract',
-        '-': 'subtract',
-        'multiply': 'multiply',
-        'product': 'multiply',
-        '*': 'multiply',
-        'times': 'multiply',
-        'divide': 'divide',
-        'break': 'divide',
-        '/': 'divide',
-        '//': 'divide'
-    }
-
-    interaction_operation = {
-        'name': 'name',
-        'who': 'created',
-        'do': 'do',
-        'feel': 'feel',
-        'how': 'how',
-        'amazing': 'amazing',
-        'great': 'amazing',
-        'oops': 'oops',
-        'whats': 'whatsup',
-        'quit': 'end_program',
-        'close': 'end_program',
-        'exit': 'end_program',
-        'end': 'end_program',
-        'kill': 'end_program',
-        'age': 'age'
-    }
-
     def __init__(self):
-        pass
+        self.calculate = Calculate()
+        self.interact = Interaction()
+
+        self.calculation_operation = {
+            'add': self.calculate.add,
+            'addition': self.calculate.add,
+            'sum': self.calculate.add,
+            '+': self.calculate.add,
+            'plus': self.calculate.add,
+            'difference': self.calculate.subtract,
+            'differences': self.calculate.subtract,
+            'subtract': self.calculate.subtract,
+            'minus': self.calculate.subtract,
+            '-': self.calculate.subtract,
+            'multiply': self.calculate.multiply,
+            'product': self.calculate.multiply,
+            '*': self.calculate.multiply,
+            'times': self.calculate.multiply,
+            'divide': self.calculate.divide,
+            'break': self.calculate.divide,
+            '/': self.calculate.divide,
+            '//': self.calculate.divide,
+        }
+
+        self.interaction_operation = {
+            'name': self.interact.name,
+            'who': self.interact.name,
+            'do': self.interact.do,
+            'feel': self.interact.feel,
+            'how': self.interact.how,
+            'amazing': self.interact.amazing,
+            'great': self.interact.amazing,
+            'oops': self.interact.oops,
+            'whats': self.interact.whatsup,
+            'age': self.interact.age,
+        }

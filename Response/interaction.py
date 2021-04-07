@@ -1,4 +1,4 @@
-from Exceptions import singleton_error
+from Response.Exceptions import singleton_error
 import time
 
 

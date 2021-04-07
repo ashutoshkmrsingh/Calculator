@@ -1,6 +1,6 @@
 import math
-from Exceptions import singleton_error
-from Exceptions import bad_args
+from Response.Exceptions import singleton_error
+from Response.Exceptions import bad_args
 
 
 class Calculate:

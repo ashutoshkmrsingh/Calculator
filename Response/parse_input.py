@@ -1,22 +1,21 @@
-from Response.operations import operations as op
+from Response.operations import Operations
 from Response.calculation import Calculate
 from Response.interaction import Interaction
-from Response.Exceptions import bad_args
+from Response.Exceptions.bad_args import BadArgumentExceptions
 
 
 class ParseInput:
     def __init__(self, text=None):
         self.text = None
         self.arg_list = []
-        self.calculate = Calculate()
-        self.interact = Interaction()
+        self.operation = Operations()
 
     def input(self, text):
         self.text = text
 
     def filter_arg(self):
         arg = []
-        for element in self.msg.split():
+        for element in self.text.split():
             try:
                 arg.append(float(element))
             except ValueError:
@@ -25,19 +24,19 @@ class ParseInput:
 
     def operate(self):
         if len(self.arg_list) >= 1:
-            for element in self.msg.split():
+            for element in self.text.split():
                 try:
-                    return self.calculate.op.calculation_operation[element.lower()](arg_list)
-                except (KeyError, bad_args, TypeError, ValueError):
+                    return self.operation.calculation_operation[element.lower()](self.arg_list)
+                except (KeyError, TypeError, ValueError, BadArgumentExceptions):
                     pass
         else:
-            for element in self.msg.split():
+            for element in self.text.split():
                 try:
-                    return self.interact.op.interaction_operation[element.lower()]()
+                    return self.operation.interaction_operation[element.lower()]()
                 except KeyError:
                     pass
 
-    def parse(self, input):
+    def parse(self, text):
         self.input(text)
         self.filter_arg()
-        self.operate()
+        return self.operate()
