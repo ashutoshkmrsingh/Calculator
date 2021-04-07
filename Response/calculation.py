@@ -40,11 +40,8 @@ class Calculate:
     def subtract(self, arg_list):
         """return difference between two numbers
         """
-        try:
-            if len(arg_list) > 2:
-                raise bad_args
-        except bad_args:
-            return 'Sorry the arguments are not valid'
+        if len(arg_list) > 2:
+            raise bad_args
 
         result = arg_list[0] - arg_list[1]
         return self.convert_int(result)
@@ -60,14 +57,56 @@ class Calculate:
     def divide(self, arg_list):
         """return division of two number
         """
-        try:
-            if len(arg_list) > 2:
-                raise bad_args
-        except bad_args:
-            return 'Sorry the arguments are not valid'
+        if len(arg_list) > 2:
+            raise bad_args
 
         result = arg_list[0] / arg_list[1]
         return self.convert_int(result)
 
+    def combination(self, arg_list):
+        """wrapper of math package - return combination of two number
+        """
+        if len(arg_list) > 2:
+            raise bad_args
+            
+        result = math.comb(arg_list[0], arg_list[1])
+        return self.convert_int(result)
 
-print(help(Calculate))
+    def factorial(self, arg_list):
+        """wrapper of math package - return factorial of a number
+        """
+        if len(arg_list) > 1:
+            raise bad_args
+
+        result = math.factorial(arg_list[0])
+        return self.convert_int(result)
+
+    def gcd(self, arg_list):
+        """wrapper of math package - return gcd of numbers
+        """
+        result = math.gcd(arg_list)
+        return self.convert_int(result)
+
+    def lcm(self, arg_list):
+        """wrapper of math package - return lcm of numbers
+        """
+        result = math.lcm(arg_list)
+        return self.convert_int(result)
+
+    def permutations(self, arg_list):
+        """wrapper of math package - return permutation of two number
+        """
+        if len(arg_list) > 2:
+            raise bad_args
+
+        result = math.perm(arg_list[0], arg_list[1])
+        return self.convert_int(result)
+
+    def power(self, arg_list):
+        """wrapper of math package - return power a ^ b
+        """
+        if len(arg_list) > 2:
+            raise bad_args
+
+        result = math.pow(arg_list[0], arg_list[1])
+        return self.convert_int(result)
