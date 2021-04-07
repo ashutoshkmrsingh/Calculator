@@ -68,7 +68,7 @@ class Calculate:
         """
         if len(arg_list) > 2:
             raise bad_args
-            
+
         result = math.comb(arg_list[0], arg_list[1])
         return self.convert_int(result)
 
