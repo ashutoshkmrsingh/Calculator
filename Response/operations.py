@@ -3,6 +3,8 @@ from Response.interaction import Interaction
 
 
 class Operations:
+    """map methods with args
+    """
     def __init__(self):
         self.calculate = Calculate()
         self.interact = Interaction()

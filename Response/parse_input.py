@@ -5,15 +5,21 @@ from Response.Exceptions.bad_args import BadArgumentExceptions
 
 
 class ParseInput:
+    """Parse input, extract information like args and methods to bind
+    """
     def __init__(self, text=None):
         self.text = None
         self.arg_list = []
         self.operation = Operations()
 
     def input(self, text):
+        """take text and assign it to object
+        """
         self.text = text
 
     def filter_arg(self):
+        """filter argument to perform numerical operations
+        """
         arg = []
         for element in self.text.split():
             try:
@@ -23,6 +29,8 @@ class ParseInput:
         self.arg_list = arg
 
     def operate(self):
+        """call methods wrt args
+        """
         if len(self.arg_list) >= 1:
             for element in self.text.split():
                 try:
@@ -37,6 +45,8 @@ class ParseInput:
                     pass
 
     def parse(self, text):
+        """bind input, filter_arg and operate
+        """
         self.input(text)
         self.filter_arg()
         return self.operate()
