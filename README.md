@@ -79,3 +79,6 @@ Request request = new Request.Builder()
   .build();
 Response response = client.newCall(request).execute();
 ```
+
+## .exe
+**./dist/main.exe**
