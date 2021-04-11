@@ -54,3 +54,6 @@ class Interaction:
 
     def date_time(self):
         return time.asctime(time.localtime())
+
+    def greet(self):
+        return 'Hii! I am a Calculator. How can I help you?'

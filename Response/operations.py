@@ -41,4 +41,5 @@ class Operations:
             'oops': self.interact.oops,
             'whats': self.interact.whatsup,
             'age': self.interact.age,
+            'greet': self.interact.greet,
         }
